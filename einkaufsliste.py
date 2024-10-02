@@ -28,5 +28,6 @@ def main():
         else:
             print("Ungültige Auswahl. Bitte wähle 1, 2 oder 3")  # Fehlerausgabe
 
-            if __name__ == "__main__":
+if __name__ == "__main__":
     main()  # Hauptprogramm starten
+
