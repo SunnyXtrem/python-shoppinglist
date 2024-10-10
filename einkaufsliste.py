@@ -18,8 +18,15 @@ def main():
         choice = input("Bitte wähle eine Option (1, 2 oder 3): ")
 
         if choice == '1':
-            item = input("Gib den Artikel ein, den du hinzufügen möchtest: ")
-            shoppinglist.append(item)  # Artikel zur Liste hinzufügen
+            item = input("Gib den Artikel ein, den du hinzufügen möchtest: ").strip()
+            if item:  # Überprüfen, ob der Artikel nicht leer ist
+                if item not in shoppinglist:  # Überprüfen, ob der Artikel bereits vorhanden ist
+                    shoppinglist.append(item)  # Artikel zur Liste hinzufügen
+                    print(f"{item} wurde zur Einkaufsliste hinzugefügt.")
+                else:
+                    print(f"{item} ist bereits in der Einkaufsliste.")
+            else:
+                print("Der Artikel darf nicht leer sein.")
         elif choice == '2':
             show_shoppinglist()  # Einkaufsliste anzeigen
         elif choice == '3':
@@ -30,4 +37,3 @@ def main():
 
 if __name__ == "__main__":
     main()  # Hauptprogramm starten
-
